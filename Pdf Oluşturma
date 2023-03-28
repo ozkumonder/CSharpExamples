@@ -1,0 +1,7 @@
+byte[] buffer = System.IO.File.ReadAllBytes(outputPath); //Encoding.ASCII.GetBytes(memString);
+            MemoryStream ms = new MemoryStream(buffer);
+            //write to file
+            FileStream file = new FileStream(@"c:\temp\file2.pdf", FileMode.Create, FileAccess.Write);
+            ms.WriteTo(file);
+            file.Close();
+            ms.Close();
